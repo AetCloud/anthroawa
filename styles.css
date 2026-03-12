@@ -37,7 +37,7 @@ body {
   align-items: center;
   text-align: center;
   width: auto;
-  max-width: 900px;
+  max-width: 1000px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
   box-sizing: border-box;
 }
