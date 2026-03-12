@@ -16,7 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .container {
@@ -25,6 +25,8 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .card {
@@ -35,10 +37,11 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 95%;
-  max-width: 650px;
+  width: 100%;
+  max-width: 700px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
-  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 .con-logo {
@@ -54,14 +57,16 @@ body {
 }
 
 .con-name {
-  font-size: clamp(2.5rem, 15vw, 5rem);
+  font-size: clamp(2.8rem, 12vw, 5.5rem);
   font-weight: 900;
   margin: 0;
   color: var(--accent);
   letter-spacing: -3px;
   line-height: 0.85;
   text-transform: uppercase;
-  white-space: nowrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
 }
 
 .status-tag {
@@ -83,8 +88,8 @@ body {
 .social-row a {
   color: var(--text-main);
   font-size: 1.8rem;
-  opacity: 0.5;
-  transition: all 0.4s ease;
+  opacity: 0.6;
+  transition: all 0.3s ease;
 }
 
 .social-row a:hover {
@@ -93,10 +98,16 @@ body {
   transform: translateY(-5px);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
+  .container {
+    padding: 10px;
+  }
+
   .card {
-    padding: 50px 20px;
-    max-width: 90%;
+    padding: 60px 25px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .con-logo {
@@ -106,30 +117,29 @@ body {
   }
 
   .con-name {
+    font-size: clamp(2.5rem, 15vw, 4rem);
     letter-spacing: -1.5px;
+    white-space: normal;
   }
 
   .status-tag {
-    margin: 15px 0 40px 0;
+    margin: 20px 0 50px 0;
     font-size: 0.75rem;
     letter-spacing: 3px;
   }
 
   .social-row {
-    gap: 20px;
-  }
-
-  .social-row a {
-    font-size: 1.5rem;
+    gap: 25px;
   }
 }
 
 .external-footer {
-  position: absolute;
-  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
   font-size: 0.75rem;
   color: var(--text-dim);
-  opacity: 0.3;
+  opacity: 0.4;
   transition: opacity 0.3s ease;
 }
 
@@ -151,21 +161,10 @@ body {
   }
   50% {
     transform: scale(1.2);
-    text-shadow:
-      0 0 15px var(--accent),
-      0 0 20px var(--accent);
+    text-shadow: 0 0 15px var(--accent);
   }
   100% {
     transform: scale(1);
     text-shadow: 0 0 5px var(--accent);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .con-name {
-    font-size: 2rem;
-  }
-  .social-row {
-    gap: 15px;
   }
 }
