@@ -157,19 +157,20 @@ body {
 }
 
 .glowing-heart {
-  color: var(--accent);
   display: inline-block;
-  animation: pulse-green 2s infinite;
+  filter: drop-shadow(0 0 5px rgba(83, 189, 167, 0.8));
+  animation: pulse-green-emoji 2s infinite;
+  cursor: default;
 }
 
-@keyframes pulse-green {
+@keyframes pulse-green-emoji {
   0%,
   100% {
     transform: scale(1);
-    text-shadow: 0 0 5px var(--accent);
+    filter: drop-shadow(0 0 5px rgba(83, 189, 167, 0.5));
   }
   50% {
-    transform: scale(1.1);
-    text-shadow: 0 0 15px var(--accent);
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 15px rgba(83, 189, 167, 1));
   }
 }
