@@ -16,11 +16,10 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .container {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,23 +30,22 @@ body {
 
 .card {
   background: var(--card-bg);
-  padding: 80px 60px;
+  padding: 60px 80px;
   border-radius: 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%;
-  max-width: 700px;
+  width: auto;
+  max-width: 900px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
   box-sizing: border-box;
-  transition: all 0.3s ease;
 }
 
 .con-logo {
   width: 65px;
   height: 65px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .con-logo img {
@@ -56,115 +54,122 @@ body {
   object-fit: contain;
 }
 
+.info-cluster {
+  margin-bottom: 30px;
+}
+
 .con-name {
-  font-size: clamp(2.8rem, 12vw, 5.5rem);
+  font-size: clamp(2rem, 6vw, 4.5rem);
   font-weight: 900;
   margin: 0;
   color: var(--accent);
-  letter-spacing: -3px;
-  line-height: 0.85;
+  letter-spacing: -2px;
+  line-height: 1;
   text-transform: uppercase;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  width: 100%;
+  white-space: nowrap;
+}
+
+.con-subname {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 5px 0 0 0;
+  letter-spacing: 3px;
+  opacity: 0.8;
+  text-transform: uppercase;
 }
 
 .status-tag {
   font-weight: 700;
   letter-spacing: 5px;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--text-dim);
-  margin: 25px 0 60px 0;
+  margin-bottom: 40px;
 }
 
 .social-row {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .social-row a {
   color: var(--text-main);
-  font-size: 1.8rem;
-  opacity: 0.6;
+  font-size: 1.6rem;
+  opacity: 0.5;
   transition: all 0.3s ease;
 }
 
 .social-row a:hover {
   color: var(--accent);
   opacity: 1;
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
-@media screen and (max-width: 650px) {
-  .container {
-    padding: 10px;
-  }
-
+@media screen and (max-width: 768px) {
   .card {
-    padding: 60px 25px;
-    border-radius: 20px;
     width: 100%;
-    max-width: 100%;
+    min-width: unset;
+    padding: 40px 20px;
+    border-radius: 24px;
   }
 
   .con-logo {
-    margin-bottom: 30px;
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
   }
 
   .con-name {
-    font-size: clamp(2.5rem, 15vw, 4rem);
-    letter-spacing: -1.5px;
+    font-size: clamp(1.8rem, 11vw, 2.8rem);
     white-space: normal;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .con-subname {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
   }
 
   .status-tag {
-    margin: 20px 0 50px 0;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
+    margin-bottom: 35px;
   }
 
   .social-row {
-    gap: 25px;
+    gap: 20px;
+  }
+
+  .social-row a {
+    font-size: 1.4rem;
   }
 }
 
 .external-footer {
-  width: 100%;
-  text-align: center;
-  padding: 30px 0;
-  font-size: 0.75rem;
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.7rem;
   color: var(--text-dim);
   opacity: 0.4;
-  transition: opacity 0.3s ease;
-}
-
-.external-footer:hover {
-  opacity: 0.8;
+  width: 100%;
+  text-align: center;
 }
 
 .glowing-heart {
   color: var(--accent);
   display: inline-block;
   animation: pulse-green 2s infinite;
-  text-shadow: 0 0 5px var(--accent);
 }
 
 @keyframes pulse-green {
-  0% {
+  0%,
+  100% {
     transform: scale(1);
     text-shadow: 0 0 5px var(--accent);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
     text-shadow: 0 0 15px var(--accent);
-  }
-  100% {
-    transform: scale(1);
-    text-shadow: 0 0 5px var(--accent);
   }
 }
